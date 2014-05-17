@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.startup">
       <startup
-            class="edu.pku.sei.apel.main.ApelModelerStartup">
+            class="edu.pku.sei.sla.main.ApelModelerStartup">
       </startup>
    </extension>
 </plugin>
