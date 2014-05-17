@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GMP Common
+Bundle-SymbolicName: edu.pku.sei.gmp.common
+Bundle-Version: 3.0.0
+Bundle-Activator: edu.pku.sei.gmp.common.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.gef;bundle-version="3.5.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: edu.pku.sei.gmp.common.cmdstack

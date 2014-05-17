@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Modeler IDE Plug-in
+Bundle-SymbolicName: edu.pku.sei.gmp.ide;singleton:=true
+Bundle-Version: 3.0.0
+Bundle-Activator: edu.pku.sei.gmp.ide.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.ide;bundle-version="3.5.1",
+ org.eclipse.core.resources;bundle-version="3.5.1",
+ edu.pku.sei.gmp.project;bundle-version="3.0.0",
+ edu.pku.sei.gmp.model;bundle-version="3.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

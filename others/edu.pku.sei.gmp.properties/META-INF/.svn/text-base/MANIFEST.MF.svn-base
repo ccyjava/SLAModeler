@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Common PropertyEditor plug-in
+Bundle-SymbolicName: edu.pku.sei.gmp.properties;singleton:=true
+Bundle-Version: 3.0.0
+Bundle-Activator: edu.pku.sei.gmp.properties.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui.views.properties.tabbed,
+ org.eclipse.gef;bundle-version="3.5.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: edu.pku.sei.gmp.properties,
+ edu.pku.sei.gmp.properties.annotation,
+ edu.pku.sei.gmp.properties.core,
+ edu.pku.sei.gmp.properties.descriptor,
+ edu.pku.sei.gmp.properties.registry,
+ edu.pku.sei.gmp.properties.section,
+ edu.pku.sei.gmp.properties.util,
+ edu.pku.sei.gmp.properties.view

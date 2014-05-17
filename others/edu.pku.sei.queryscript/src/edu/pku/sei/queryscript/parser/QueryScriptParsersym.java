@@ -1,0 +1,56 @@
+package edu.pku.sei.queryscript.parser;
+
+public interface QueryScriptParsersym {
+	public final static int TK_NUMERIC_OPERATION = 45, TK_STRING_LITERAL = 4,
+			TK_INTEGER_LITERAL = 5, TK_REAL_LITERAL = 46, TK_PLUS = 16,
+			TK_MINUS = 17, TK_MULTIPLY = 47, TK_DIVIDE = 48, TK_GREATER = 24,
+			TK_LESS = 25, TK_EQUAL = 26, TK_GREATER_EQUAL = 49,
+			TK_LESS_EQUAL = 50, TK_NOT_EQUAL = 51, TK_LPAREN = 1,
+			TK_RPAREN = 10, TK_LBRACE = 27, TK_RBRACE = 28, TK_LBRACKET = 12,
+			TK_RBRACKET = 21, TK_ARROW = 19, TK_BAR = 18, TK_COMMA = 3,
+			TK_COLON = 22, TK_COLONCOLON = 29, TK_SEMICOLON = 30, TK_DOT = 20,
+			TK_DOTDOT = 52, TK_ATPRE = 53, TK_CARET = 54, TK_CARETCARET = 55,
+			TK_QUESTIONMARK = 56, TK_DOLLAR = 31, TK_SHARP = 32,
+			TK_PERCENT = 33, TK_self = 6, TK_inv = 57, TK_pre = 58,
+			TK_post = 59, TK_context = 60, TK_package = 61, TK_endpackage = 62,
+			TK_def = 63, TK_if = 13, TK_then = 34, TK_else = 35, TK_endif = 23,
+			TK_and = 14, TK_or = 15, TK_xor = 64, TK_not = 11, TK_implies = 65,
+			TK_let = 66, TK_in = 67, TK_true = 7, TK_false = 8, TK_body = 68,
+			TK_derive = 69, TK_init = 70, TK_null = 9, TK_attr = 71,
+			TK_oper = 72, TK_Set = 73, TK_Bag = 74, TK_Sequence = 75,
+			TK_Collection = 76, TK_OrderedSet = 77, TK_iterate = 78,
+			TK_forAll = 36, TK_exists = 37, TK_isUnique = 79, TK_any = 80,
+			TK_one = 81, TK_collect = 38, TK_select = 39, TK_reject = 82,
+			TK_collectNested = 83, TK_sortedBy = 84, TK_closure = 85,
+			TK_oclIsKindOf = 86, TK_oclIsTypeOf = 87, TK_oclAsType = 88,
+			TK_oclIsNew = 89, TK_oclIsUndefined = 90, TK_oclIsInvalid = 91,
+			TK_oclIsInState = 92, TK_allInstances = 93, TK_String = 40,
+			TK_Integer = 41, TK_UnlimitedNatural = 94, TK_Real = 95,
+			TK_Boolean = 42, TK_Tuple = 96, TK_OclAny = 97, TK_OclVoid = 98,
+			TK_Invalid = 99, TK_OclMessage = 100, TK_OclInvalid = 101,
+			TK_query = 43, TK_EOF_TOKEN = 44, TK_IDENTIFIER = 2,
+			TK_INTEGER_RANGE_START = 102, TK_ERROR_TOKEN = 103;
+
+	public final static String orderedTerminalSymbols[] = { "", "LPAREN",
+			"IDENTIFIER", "COMMA", "STRING_LITERAL", "INTEGER_LITERAL", "self",
+			"true", "false", "null", "RPAREN", "not", "LBRACKET", "if", "and",
+			"or", "PLUS", "MINUS", "BAR", "ARROW", "DOT", "RBRACKET", "COLON",
+			"endif", "GREATER", "LESS", "EQUAL", "LBRACE", "RBRACE",
+			"COLONCOLON", "SEMICOLON", "DOLLAR", "SHARP", "PERCENT", "then",
+			"else", "forAll", "exists", "collect", "select", "String",
+			"Integer", "Boolean", "query", "EOF_TOKEN", "NUMERIC_OPERATION",
+			"REAL_LITERAL", "MULTIPLY", "DIVIDE", "GREATER_EQUAL",
+			"LESS_EQUAL", "NOT_EQUAL", "DOTDOT", "ATPRE", "CARET",
+			"CARETCARET", "QUESTIONMARK", "inv", "pre", "post", "context",
+			"package", "endpackage", "def", "xor", "implies", "let", "in",
+			"body", "derive", "init", "attr", "oper", "Set", "Bag", "Sequence",
+			"Collection", "OrderedSet", "iterate", "isUnique", "any", "one",
+			"reject", "collectNested", "sortedBy", "closure", "oclIsKindOf",
+			"oclIsTypeOf", "oclAsType", "oclIsNew", "oclIsUndefined",
+			"oclIsInvalid", "oclIsInState", "allInstances", "UnlimitedNatural",
+			"Real", "Tuple", "OclAny", "OclVoid", "Invalid", "OclMessage",
+			"OclInvalid", "INTEGER_RANGE_START", "ERROR_TOKEN" };
+
+	public final static int numTokenKinds = orderedTerminalSymbols.length;
+	public final static boolean isValidForParser = true;
+}

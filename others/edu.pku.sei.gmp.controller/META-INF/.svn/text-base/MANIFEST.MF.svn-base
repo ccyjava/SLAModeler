@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Common Controller Plug-in
+Bundle-SymbolicName: edu.pku.sei.gmp.controller
+Bundle-Version: 3.0.0
+Bundle-Activator: edu.pku.sei.gmp.controller.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.gef;bundle-version="3.5.0",
+ org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.0",
+ org.aspectj.runtime,
+ edu.pku.sei.gmp.model;bundle-version="3.0.0",
+ edu.pku.sei.gmp.notation;bundle-version="3.0.0",
+ edu.pku.sei.gmp.properties;bundle-version="3.0.0",
+ edu.pku.sei.gmp.project;bundle-version="3.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: edu.pku.sei.gmp.controller,
+ edu.pku.sei.gmp.controller.command,
+ edu.pku.sei.gmp.controller.common,
+ edu.pku.sei.gmp.controller.editpart,
+ edu.pku.sei.gmp.controller.editpolicy,
+ edu.pku.sei.gmp.controller.figure

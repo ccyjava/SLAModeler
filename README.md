@@ -2,7 +2,7 @@ SLAModeler
 ==========
 ##install
 
-you must install GMP plug-in first, you can get it in [here]()
+you must install GMP plug-in first, you can get it in others directory
 
 ##run
 

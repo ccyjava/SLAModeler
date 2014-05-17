@@ -1,0 +1,86 @@
+10
+
+dir
+1994
+svn://192.168.2.228/ooteam/Incubator/GMP/edu.pku.sei.gmp.properties/src/edu/pku/sei/gmp/properties
+svn://192.168.2.228/ooteam
+
+
+
+2010-06-09T07:30:22.161571Z
+819
+yangyuanzu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5812dcb6-d656-43bf-a0fd-a50429f6d9c2
+
+section
+dir
+
+core
+dir
+
+registry
+dir
+
+annotation
+dir
+
+view
+dir
+
+Activator.java
+file
+
+
+
+
+2012-08-06T14:20:52.885996Z
+ef99b9c2eb8bff48f2a69c8578605310
+2010-04-08T08:02:34.024052Z
+474
+yangyuanzu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1421
+
+util
+dir
+
+command
+dir
+
+descriptor
+dir
+

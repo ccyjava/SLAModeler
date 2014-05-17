@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Common Notation Plug-in
+Bundle-SymbolicName: edu.pku.sei.gmp.notation
+Bundle-Version: 3.0.0
+Bundle-Activator: edu.pku.sei.gmp.notation.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.gef;bundle-version="3.5.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: edu.pku.sei.gmp.notation.layout,
+ edu.pku.sei.gmp.notation.layout.constraint
+Import-Package: org.eclipse.draw2d,
+ org.eclipse.draw2d.geometry

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Resource Manager
+Bundle-SymbolicName: edu.pku.sei.gmp.resource
+Bundle-Version: 3.0.0
+Bundle-Activator: edu.pku.sei.gmp.resource.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: edu.pku.sei.gmp.resource,
+ edu.pku.sei.gmp.resource.color,
+ edu.pku.sei.gmp.resource.font,
+ edu.pku.sei.gmp.resource.image

@@ -1,0 +1,9 @@
+source.. = src/
+output.. = bin/
+bin.includes = .,\
+               META-INF/
+src.includes = lib/
+jars.compile.order = lib/lpg-java-runtime-bin-2.0.18.jar,\
+                     .
+
+

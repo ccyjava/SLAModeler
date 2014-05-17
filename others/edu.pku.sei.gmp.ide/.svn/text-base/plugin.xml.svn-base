@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="edu.pku.sei.gmp.ide.modelercategory"
+            name="PKU Modeler">
+      </category>
+      <wizard
+            category="edu.pku.sei.gmp.ide.modelercategory"
+            class="edu.pku.sei.gmp.ide.wizard.NewProjectWizard"
+            finalPerspective="edu.pku.sei.gmp.ide.gmpperspective"
+            icon="project.gif"
+            id="edu.pku.sei.gmp.ide.newprojectwizard"
+            name="PKU Modeling Project"
+            preferredPerspectives="edu.pku.sei.gmp.ide.gmpperspective"
+            project="true">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="edu.pku.sei.gmp.ide.perspective.GMPPerspective"
+            id="edu.pku.sei.gmp.ide.gmpperspective"
+            name="PKU Modeler Perspective">
+      </perspective>
+   </extension>
+
+</plugin>

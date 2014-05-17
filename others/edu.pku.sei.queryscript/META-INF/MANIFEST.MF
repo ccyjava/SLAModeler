@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Queryscript
+Bundle-SymbolicName: edu.pku.sei.queryscript
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: edu.pku.sei.queryscript.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: edu.pku.sei.queryscript.parser,
+ edu.pku.sei.queryscript.parser.Ast,
+ lpg.runtime
+Bundle-ClassPath: .,
+ lib/lpg-java-runtime-bin-2.0.18.jar

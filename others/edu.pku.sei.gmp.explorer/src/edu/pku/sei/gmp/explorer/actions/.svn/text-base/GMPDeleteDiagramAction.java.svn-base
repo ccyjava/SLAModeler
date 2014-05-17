@@ -1,0 +1,51 @@
+package edu.pku.sei.gmp.explorer.actions;
+
+import java.util.List;
+
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.commands.CommandStack;
+import org.eclipse.jface.action.Action;
+
+import edu.pku.sei.gmp.common.cmdstack.GMPCommandStack;
+import edu.pku.sei.gmp.controller.command.GMPCommandFactoryRegistry;
+import edu.pku.sei.gmp.model.common.GMPModel;
+import edu.pku.sei.gmp.model.shape.GMPDiagram;
+import edu.pku.sei.gmp.project.util.GMPProjectUtils;
+import edu.pku.sei.gmp.resource.image.GMPImageProvider;
+
+public class GMPDeleteDiagramAction extends Action {
+	private Command deleteCommand;
+	private CommandStack commandStack;
+
+	public GMPDeleteDiagramAction(List<?> selectedItems) {
+		setText("Delete");
+		setImageDescriptor(GMPImageProvider
+				.getImageDescriptor(GMPImageProvider.DELETE));
+		if (selectedItems == null || selectedItems.isEmpty()) {
+			setEnabled(false);
+			return;
+		}
+		if (selectedItems.get(0) instanceof GMPDiagram) {
+			GMPDiagram diagram = (GMPDiagram) selectedItems
+					.get(0);
+			GMPModel model = diagram.getModel();
+			String projectNature = GMPProjectUtils.model2project(model)
+					.getProjectNature();
+			deleteCommand = GMPCommandFactoryRegistry.getInstance()
+					.getCommandFactory(projectNature).getDeleteCommand(
+							diagram);
+			if (deleteCommand == null) {
+				setEnabled(false);
+			} else {
+				commandStack = GMPCommandStack.getCommandStack(model);
+				setEnabled(true);
+			}
+		}
+	}
+
+	public void run() {
+		if (deleteCommand != null) {
+			commandStack.execute(deleteCommand);
+		}
+	}
+}

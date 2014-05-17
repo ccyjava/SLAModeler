@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+ 	<extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="edu.pku.sei.gmp.properties.view.GMPPropertyView"
+            sectionDescriptorProvider="org.eclipse.ui.views.properties.tabbed.ISectionDescriptorProvider">
+         <propertyCategory category="General">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+       <category
+            id="edu.pku.sei.gmp.properties.gmpcategory"
+            name="GMP Properties">
+      </category>
+       <view
+       		category="edu.pku.sei.gmp.properties.gmpcategory"
+       		class="edu.pku.sei.gmp.properties.view.GMPPropertyView"
+       		id="edu.pku.sei.gmp.properties.view.GMPPropertyView"
+       		name="GMP Properties">
+       	</view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="edu.pku.sei.gmp.properties.view.GMPPropertyView">
+         <propertyTab
+               category="General"
+               id="edu.pku.sei.gmp.properties.ModelPropertyTab"
+               label="Model">
+         </propertyTab>
+         <propertyTab
+               afterTab="edu.pku.sei.gmp.properties.ModelPropertyTab"
+               category="General"
+               id="edu.pku.sei.gmp.properties.AppearencePropertyTab"
+               label="Appearence">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="edu.pku.sei.gmp.properties.view.GMPPropertyView">
+         <propertySection
+               class="edu.pku.sei.gmp.properties.section.GMPModelPropertySection"
+               filter="edu.pku.sei.gmp.properties.section.GMPModelPropertySectionFilter"
+               id="edu.pku.sei.gmp.properties.section.GMPModelPropertySection"
+               tab="edu.pku.sei.gmp.properties.ModelPropertyTab">
+             
+         </propertySection>
+         <propertySection
+               afterSection="edu.pku.sei.gmp.properties.section.GMPModelPropertySection"
+               class="edu.pku.sei.gmp.properties.section.GMPAppearencePropertySection"
+               id="edu.pku.sei.gmp.properties.section.GMPAppearencePropertySection"
+               tab="edu.pku.sei.gmp.properties.AppearencePropertyTab">
+         </propertySection>
+      </propertySections>
+   </extension>
+   
+</plugin>
