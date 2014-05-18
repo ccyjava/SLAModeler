@@ -10,9 +10,9 @@ import edu.pku.sei.gmp.model.shape.GMPDiagram;
 import edu.pku.sei.gmp.model.shape.GMPShapeElement;
 import edu.pku.sei.sla.ctrl.editpart.sla.ComputeServiceEditPart;
 import edu.pku.sei.sla.ctrl.editpart.sla.SLAAgreementEditPart;
-import edu.pku.sei.sla.model.common.SLAModel;
 import edu.pku.sei.sla.model.sla.ComputeService;
 import edu.pku.sei.sla.model.sla.SLAAgreement;
+import edu.pku.sei.sla.model.sla.SLAModel;
 import edu.pku.sei.sla.model.sla.SLAModelElement;
 
 public class SLAEditPartFactory extends GMPEditPartFactory {

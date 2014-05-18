@@ -2,9 +2,9 @@ package edu.pku.sei.sla.ctrl.command.sla;
 
 import org.eclipse.gef.commands.Command;
 
-import edu.pku.sei.sla.model.common.SLAModel;
 import edu.pku.sei.sla.model.sla.ComputeService;
 import edu.pku.sei.sla.model.sla.SLAAgreement;
+import edu.pku.sei.sla.model.sla.SLAModel;
 
 public class SLADeleteSLAAgreementCommand extends Command {
 	ComputeService cs = null;
@@ -29,7 +29,7 @@ public class SLADeleteSLAAgreementCommand extends Command {
 	public void execute() {
 		if (cs != null && am != null) {
 			am.setContainer(null);
-			cs.getAgreements().remove(am);
+			cs.getChildren().remove(am);
 		}
 	}
 
@@ -37,7 +37,7 @@ public class SLADeleteSLAAgreementCommand extends Command {
 	public void undo() {
 		if (cs != null && am != null) {
 			am.setContainer(cs);
-			cs.getAgreements().add(am);
+			cs.getChildren().add(am);
 		}
 	}
 }

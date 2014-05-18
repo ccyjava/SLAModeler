@@ -1,4 +1,4 @@
-package edu.pku.sei.sla.model.common;
+package edu.pku.sei.sla.model.sla;
 
 import edu.pku.sei.gmp.model.common.GMPModel;
 

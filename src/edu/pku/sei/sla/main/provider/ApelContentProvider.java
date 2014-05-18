@@ -5,13 +5,9 @@ import java.util.ArrayList;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-
-
-
 import edu.pku.sei.sla.main.project.ApelModelerProject;
-import edu.pku.sei.sla.model.common.SLAModel;
 import edu.pku.sei.sla.model.sla.ComputeService;
-
+import edu.pku.sei.sla.model.sla.SLAModel;
 
 public class ApelContentProvider implements ITreeContentProvider {
 
@@ -20,16 +16,13 @@ public class ApelContentProvider implements ITreeContentProvider {
 		if (parentElement instanceof ApelModelerProject) {
 			ApelModelerProject project = (ApelModelerProject) parentElement;
 			return project.getModels().toArray();
-		} 
-		 else if (parentElement instanceof SLAModel) {
+		} else if (parentElement instanceof SLAModel) {
 			return getChildrenOfSLAModel((SLAModel) parentElement);
 		} else if (parentElement instanceof ComputeService) {
 			return getChildrenofComputeService((ComputeService) parentElement);
 		}
 		return new Object[0];
 	}
-
-	
 
 	private Object[] getChildrenOfSLAModel(SLAModel m) {
 		ArrayList<Object> children = new ArrayList<Object>();
@@ -39,7 +32,7 @@ public class ApelContentProvider implements ITreeContentProvider {
 	}
 
 	private Object[] getChildrenofComputeService(ComputeService cs) {
-		return cs.getAgreements().toArray();
+		return cs.getChildren().toArray();
 	}
 
 	@Override

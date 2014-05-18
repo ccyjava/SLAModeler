@@ -17,8 +17,8 @@ import edu.pku.sei.gmp.explorer.actions.GMPExplorerUpdateActionManager;
 import edu.pku.sei.gmp.explorer.actions.GMPRedoAction;
 import edu.pku.sei.gmp.explorer.actions.GMPUndoAction;
 import edu.pku.sei.gmp.model.shape.GMPDiagram;
-import edu.pku.sei.sla.model.common.SLAModel;
 import edu.pku.sei.sla.model.common.SLAModelConst;
+import edu.pku.sei.sla.model.sla.SLAModel;
 
 public class ApelExplorerActionGroup extends GMPExplorerActionGroup {
 

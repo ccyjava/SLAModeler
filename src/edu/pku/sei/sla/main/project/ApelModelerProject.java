@@ -3,23 +3,23 @@ package edu.pku.sei.sla.main.project;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 
-
-
 import edu.pku.sei.gmp.model.common.GMPModel;
+import edu.pku.sei.gmp.model.common.GMPModelFactory;
 import edu.pku.sei.gmp.model.xml.GMPXMLSaveLoader;
 import edu.pku.sei.gmp.project.GMPProject;
 import edu.pku.sei.gmp.project.exception.ProjectLoadException;
 import edu.pku.sei.gmp.project.exception.ProjectSaveException;
-import edu.pku.sei.sla.model.common.SLAModel;
 import edu.pku.sei.sla.model.common.SLAModelConst;
-import edu.pku.sei.sla.model.common.SLAModelFactory;
+
+import edu.pku.sei.sla.model.sla.SLAModel;
+import edu.pku.sei.sla.util.SmartModelFactory;
 
 public class ApelModelerProject extends GMPProject {
 	public static String PROJECT_NATURE = "edu.pku.sei.apel.ApelModeler";
 
-//	private static final String bpelModelName = "bpel";
-//	private static final String wsdlModelName = "wsdl";
-//	private static final String cooperationModelName = "cooperation";
+	// private static final String bpelModelName = "bpel";
+	// private static final String wsdlModelName = "wsdl";
+	// private static final String cooperationModelName = "cooperation";
 	private static final String slaModelName = "sla";
 
 	public ApelModelerProject(IProject project) {
@@ -45,9 +45,8 @@ public class ApelModelerProject extends GMPProject {
 		if (project == null)
 			return;
 		String parentDir = project.getLocation().toOSString();
-		String path ="";
+		String path = "";
 		GMPXMLSaveLoader saveLoader = new GMPXMLSaveLoader();
-		
 
 		path = parentDir + "/" + slaModelName;
 		SLAModel sModel = getSLAModel();
@@ -62,12 +61,11 @@ public class ApelModelerProject extends GMPProject {
 
 	@Override
 	public void load() throws ProjectLoadException {
-		
+
 		String parentDir = project.getLocation().toOSString();
 		String path = "";
-		
+
 		GMPXMLSaveLoader saveLoader = new GMPXMLSaveLoader();
-		
 
 		initSLAModel();
 		path = parentDir + "/" + slaModelName;
@@ -82,14 +80,14 @@ public class ApelModelerProject extends GMPProject {
 
 	@Override
 	public void initProject() {
-		
+
 		initSLAModel();
 	}
 
-	
-
 	private void initSLAModel() {
-		SLAModelFactory sModelFactory = new SLAModelFactory();
+		// SLAModelFactory sModelFactory = new SLAModelFactory();
+		GMPModelFactory sModelFactory = new SmartModelFactory(
+				"edu.pku.sei.sla.model.sla");
 		SLAModel sModel = (SLAModel) sModelFactory
 				.createModelElement(SLAModelConst.__SLAMODEL__);
 		sModel.setModelFactory(sModelFactory);
@@ -103,7 +101,5 @@ public class ApelModelerProject extends GMPProject {
 				return (SLAModel) m;
 		return null;
 	}
-
-	
 
 }

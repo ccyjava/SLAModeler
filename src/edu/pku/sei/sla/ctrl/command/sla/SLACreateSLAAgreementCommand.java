@@ -25,7 +25,7 @@ public class SLACreateSLAAgreementCommand extends Command {
 	public void execute() {
 		if (cs != null && am != null) {
 			am.setContainer(cs);
-			cs.getAgreements().add(am);
+			cs.getChildren().add(am);
 		}
 	}
 
@@ -37,7 +37,7 @@ public class SLACreateSLAAgreementCommand extends Command {
 	@Override
 	public void undo() {
 		if (cs != null & am != null) {
-			cs.getAgreements().remove(am);
+			cs.getChildren().remove(am);
 			am.setContainer(null);
 		}
 	}

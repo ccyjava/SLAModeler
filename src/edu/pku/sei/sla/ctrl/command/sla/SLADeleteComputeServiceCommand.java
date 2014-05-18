@@ -2,8 +2,8 @@ package edu.pku.sei.sla.ctrl.command.sla;
 
 import org.eclipse.gef.commands.Command;
 
-import edu.pku.sei.sla.model.common.SLAModel;
 import edu.pku.sei.sla.model.sla.ComputeService;
+import edu.pku.sei.sla.model.sla.SLAModel;
 
 public class SLADeleteComputeServiceCommand extends Command {
 	private SLAModel model = null;

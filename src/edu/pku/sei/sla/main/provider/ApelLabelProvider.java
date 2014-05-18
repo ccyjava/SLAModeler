@@ -11,8 +11,8 @@ import org.eclipse.swt.graphics.Image;
 import edu.pku.sei.gmp.model.shape.GMPDiagram;
 import edu.pku.sei.gmp.resource.image.GMPImageProvider;
 import edu.pku.sei.sla.images.ApelImageProvider;
-import edu.pku.sei.sla.model.common.SLAModel;
 import edu.pku.sei.sla.model.sla.ComputeService;
+import edu.pku.sei.sla.model.sla.SLAModel;
 
 public class ApelLabelProvider implements ILabelProvider {
 
