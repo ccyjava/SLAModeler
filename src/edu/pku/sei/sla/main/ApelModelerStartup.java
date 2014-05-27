@@ -1,7 +1,14 @@
 package edu.pku.sei.sla.main;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+
 import org.eclipse.ui.IStartup;
 
+import edu.pku.sei.gmp.controller.command.GMPCommandFactory;
 import edu.pku.sei.gmp.controller.command.GMPCommandFactoryRegistry;
 import edu.pku.sei.gmp.editor.registry.GMPEditorActionProviderRegistry;
 import edu.pku.sei.gmp.editor.registry.GMPEditorDropTargetListenerProxyonRegistry;
@@ -18,11 +25,32 @@ import edu.pku.sei.sla.main.provider.ApelEditorDropTargetListenerProxyon;
 import edu.pku.sei.sla.main.provider.ApelExplorerActionProvider;
 import edu.pku.sei.sla.main.provider.ApelLabelProvider;
 import edu.pku.sei.sla.main.provider.ApelViewerDropAdapterProxyon;
+import edu.pku.sei.sla.util.SmartCommandFactory;
+import edu.pku.sei.sla.util.SmartPaletteFactory;
+import edu.pku.sei.sla.util.Test;
 
 public class ApelModelerStartup implements IStartup {
 	@Override
 	public void earlyStartup() {
 		register();
+		Test.getAllClass();
+
+		try {
+			// FileReader fr = new FileReader("config.txt");
+			// BufferedReader br = new BufferedReader(fr);
+			// String line = "";
+			// while ((line = br.readLine()) != null) {
+			// System.out.println(line);
+			// }
+			FileWriter fw = new FileWriter("a.txt");
+			fw.write("test");
+			fw.close();
+			File f = new File("a.txt");
+			System.out.println(f.getCanonicalPath());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -56,9 +84,16 @@ public class ApelModelerStartup implements IStartup {
 				.registerProxyon(ApelModelerProject.PROJECT_NATURE,
 						new ApelEditorDropTargetListenerProxyon());
 
-		GMPCommandFactoryRegistry.getInstance().registerCommandFactory(
-				ApelModelerProject.PROJECT_NATURE,
-				ApelCommandFactory.getInstance());
-	}
+		// GMPCommandFactoryRegistry.getInstance().registerCommandFactory(
+		// ApelModelerProject.PROJECT_NATURE,
+		// ApelCommandFactory.getInstance());
 
+		GMPCommandFactory cf = SmartCommandFactory.getInstance()
+				.init_contain_relation_table("config.txt");
+
+		GMPCommandFactoryRegistry.getInstance().registerCommandFactory(
+				ApelModelerProject.PROJECT_NATURE, cf);
+
+		SmartPaletteFactory.register("edu.pku.sei.sla.model.sla", "config.txt");
+	}
 }

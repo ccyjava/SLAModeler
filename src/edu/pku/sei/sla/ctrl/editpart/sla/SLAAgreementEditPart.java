@@ -20,16 +20,20 @@ public class SLAAgreementEditPart extends GMPNodeEditPart {
 		refreshVisuals();
 		super.handlePropertyChanged(event);
 	}
+
 	protected void createEditPolicies() {
-		
+
 		super.createEditPolicies();
-		
+
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, new ApelXYLayoutEditPolicy());
-		
+
 	}
+
 	protected void refreshVisuals() {
 		SLAAgreement am = getSLAAgreement();
 		// ((LinearContainerFigure) figure).setName(modelEle.getName());
+		((BasicViewFigure) (this.getFigure())).getHeader()
+				.setText(am.getName());
 		super.refreshVisuals();
 	}
 

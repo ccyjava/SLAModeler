@@ -27,7 +27,7 @@ public class ApelEditorActionGroup extends GMPEditorActionGroup {
 		if (selectedElements.size() < 1)
 			return;
 		
-		//加入修改块状元素背景色及线条颜色的action
+		
 		ArrayList<GMPNodeEditPart> nodes = new ArrayList<GMPNodeEditPart>(); 
 		Iterator<?> it = selectedElements.iterator();
 		Object part;

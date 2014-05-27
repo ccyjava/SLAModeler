@@ -65,7 +65,7 @@ public class ComputeServiceEditPart extends GMPNodeEditPart {
 		if (figure != null) {
 			Label l = (Label) (((SimpleContainerFigure) figure)
 					.getCollapsedLabel());
-			l.setText(cs.getName());
+			l.setText(cs.getName()); 
 		}
 		// ((LinearContainerFigure) figure).setName(modelEle.getName());
 		super.refreshVisuals();

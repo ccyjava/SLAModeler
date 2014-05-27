@@ -15,6 +15,8 @@ public class SmartModelFactory extends GMPModelFactory {
 		return packageName;
 	}
 
+	
+	
 	public SmartModelFactory(String packageName) {
 		super();
 		this.packageName = packageName;
@@ -42,6 +44,7 @@ public class SmartModelFactory extends GMPModelFactory {
 		try {
 			element = (GMPModelElement) Class.forName(packageName + "." + type)
 					.newInstance();
+			element.setName(type);
 			System.out.println("smart factory create : " + packageName + "."
 					+ type);
 
@@ -57,7 +60,7 @@ public class SmartModelFactory extends GMPModelFactory {
 			}
 
 			element.setModel(this.getModel());
-		}else{
+		} else {
 			return null;
 		}
 

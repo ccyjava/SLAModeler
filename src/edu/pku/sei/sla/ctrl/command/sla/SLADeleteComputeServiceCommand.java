@@ -2,6 +2,7 @@ package edu.pku.sei.sla.ctrl.command.sla;
 
 import org.eclipse.gef.commands.Command;
 
+import edu.pku.sei.gmp.model.common.GMPModel;
 import edu.pku.sei.sla.model.sla.ComputeService;
 import edu.pku.sei.sla.model.sla.SLAModel;
 
@@ -29,10 +30,8 @@ public class SLADeleteComputeServiceCommand extends Command {
 	}
 
 	public void undo() {
-		if (model != null) {
-			cs.setContainer(model);
-			model.getRootElements().add(cs);
-		}
+		cs.setContainer(model);
+		model.getRootElements().add(cs);
 	}
 
 }
