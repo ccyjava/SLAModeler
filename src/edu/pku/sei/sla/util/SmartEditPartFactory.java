@@ -1,11 +1,11 @@
-package edu.pku.sei.sla.ctrl.editpart;
+package edu.pku.sei.sla.util;
 
 import org.eclipse.gef.EditPart;
 
-
-
 import edu.pku.sei.gmp.controller.editpart.GMPDiagramEditPart;
 import edu.pku.sei.gmp.controller.editpart.GMPEditPartFactory;
+import edu.pku.sei.gmp.model.common.GMPModel;
+import edu.pku.sei.gmp.model.concept.GMPModelElement;
 import edu.pku.sei.gmp.model.shape.GMPDiagram;
 import edu.pku.sei.gmp.model.shape.GMPShapeElement;
 import edu.pku.sei.sla.ctrl.editpart.sla.ComputeServiceEditPart;
@@ -15,8 +15,7 @@ import edu.pku.sei.sla.model.sla.SLAAgreement;
 import edu.pku.sei.sla.model.sla.SLAModel;
 import edu.pku.sei.sla.model.sla.SLAModelElement;
 
-public class SLAEditPartFactory extends GMPEditPartFactory {
-
+public class SmartEditPartFactory extends GMPEditPartFactory {
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 
@@ -35,15 +34,32 @@ public class SLAEditPartFactory extends GMPEditPartFactory {
 
 	@Override
 	public EditPart createShapeEditPart(GMPShapeElement model) {
-		SLAModel m = (SLAModel) model.getModel();
-		SLAModelElement mElement = (SLAModelElement) m.shape2model(model);
-		if (mElement instanceof ComputeService) {
-			return new ComputeServiceEditPart();
-		} else if (mElement instanceof SLAAgreement) {
-			return new SLAAgreementEditPart();
-		} else {
-			return super.createShapeEditPart(model);
+		GMPModel m = model.getModel();
+		GMPModelElement mElement = m.shape2model(model);
+		String ElementName = Tools.getnames(mElement);
+		EditPart editpart = null;
+		if (!ElementName.equals("")) {
+			try {
+				String prefix = SmartInfoCenter.getInstance().getPkg_prefix();
+				String model_name = SmartInfoCenter.getInstance()
+						.getPkg_model_name();
+				if (!prefix.equals("")) {
+					String pkg_name = prefix + ".ctrl.editpart." + model_name;
+					editpart = (EditPart) Class.forName(
+							pkg_name + "." + ElementName + "EditPart")
+							.newInstance();
+					System.out.println("SmartEditPartFactory create :"
+							+ pkg_name + "." + ElementName + "EditPart");
+				}
+			} catch (Exception e) {
+				// e.printStackTrace();
+			}
 		}
-	}
+		if (editpart != null)
+			return editpart;
 
+		System.out.println("create smart EditPart");
+		return new SmartEditPart();
+
+	}
 }

@@ -9,7 +9,6 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.editpolicies.RootComponentEditPolicy;
 import org.eclipse.gef.editpolicies.SnapFeedbackPolicy;
 
-
 import edu.pku.sei.gmp.controller.editpart.GMPNodeEditPart;
 import edu.pku.sei.gmp.controller.editpolicy.GMPXYLayoutEditPolicy;
 import edu.pku.sei.gmp.controller.figure.LinearContainerFigure;
@@ -21,7 +20,7 @@ import edu.pku.sei.sla.images.ApelImageProvider;
 import edu.pku.sei.sla.model.sla.ComputeService;
 
 public class ComputeServiceEditPart extends GMPNodeEditPart {
-
+	@Override
 	protected IFigure createFigure() {
 		return new SimpleContainerFigure();
 		// LinearContainerFigure figure = new LinearContainerFigure();
@@ -34,6 +33,7 @@ public class ComputeServiceEditPart extends GMPNodeEditPart {
 		// return figure;
 	}
 
+	@Override
 	public IFigure getContentPane() {
 		if (getFigure() instanceof SimpleContainerFigure) {
 			return ((SimpleContainerFigure) getFigure()).getContentPane();
@@ -45,6 +45,7 @@ public class ComputeServiceEditPart extends GMPNodeEditPart {
 		return (ComputeService) getModelElement();
 	}
 
+	@Override
 	public void handlePropertyChanged(PropertyChangeEvent event) {
 		refreshVisuals();
 		super.handlePropertyChanged(event);
@@ -60,12 +61,13 @@ public class ComputeServiceEditPart extends GMPNodeEditPart {
 		// installEditPolicy("Snap Feedback", new SnapFeedbackPolicy());
 	}
 
+	@Override
 	protected void refreshVisuals() {
 		ComputeService cs = getComputeService();
 		if (figure != null) {
 			Label l = (Label) (((SimpleContainerFigure) figure)
 					.getCollapsedLabel());
-			l.setText(cs.getName()); 
+			l.setText(cs.getName());
 		}
 		// ((LinearContainerFigure) figure).setName(modelEle.getName());
 		super.refreshVisuals();

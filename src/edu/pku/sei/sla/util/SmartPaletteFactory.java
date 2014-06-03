@@ -50,9 +50,10 @@ public class SmartPaletteFactory extends GMPPaletteFactory {
 						.getImageDescriptor(ApelImageProvider.COMPUTESEVICE);
 				entry.entryType = GMPEntryType.NODE;
 				desc.add(entry);
-				System.out.println("Smart Palette Factory Create " + s);
+				System.out.println("SmartPaletteFactory Create " + s);
 			} catch (Exception e) {
-
+				System.err.println("Smart PaletteFactory can not found :"
+						+ p_name + "." + s);
 			}
 		}
 

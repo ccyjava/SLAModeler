@@ -30,7 +30,7 @@ public class SmartCreateCommand extends Command {
 				element.setContainer(parent_element);
 				parent_element.getChildren().add(element);
 			}
-			System.out.println("Smart Create Command create: "
+			System.out.println("SmartCreateCommand create: "
 					+ Tools.getnames(parent_element) + " "
 					+ Tools.getnames(element));
 		}

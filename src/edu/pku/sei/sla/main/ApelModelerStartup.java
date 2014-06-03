@@ -26,6 +26,7 @@ import edu.pku.sei.sla.main.provider.ApelExplorerActionProvider;
 import edu.pku.sei.sla.main.provider.ApelLabelProvider;
 import edu.pku.sei.sla.main.provider.ApelViewerDropAdapterProxyon;
 import edu.pku.sei.sla.util.SmartCommandFactory;
+import edu.pku.sei.sla.util.SmartInfoCenter;
 import edu.pku.sei.sla.util.SmartPaletteFactory;
 import edu.pku.sei.sla.util.Test;
 
@@ -94,6 +95,9 @@ public class ApelModelerStartup implements IStartup {
 		GMPCommandFactoryRegistry.getInstance().registerCommandFactory(
 				ApelModelerProject.PROJECT_NATURE, cf);
 
+		SmartInfoCenter.getInstance().setPkg_prefix("edu.pku.sei.sla");
+		SmartInfoCenter.getInstance().setPkg_model_name("sla");
+		
 		SmartPaletteFactory.register("edu.pku.sei.sla.model.sla", "config.txt");
 	}
 }

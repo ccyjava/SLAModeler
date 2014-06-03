@@ -15,8 +15,6 @@ public class SmartModelFactory extends GMPModelFactory {
 		return packageName;
 	}
 
-	
-	
 	public SmartModelFactory(String packageName) {
 		super();
 		this.packageName = packageName;
@@ -36,7 +34,7 @@ public class SmartModelFactory extends GMPModelFactory {
 		try {
 			Class.forName(packageName + "." + type);
 		} catch (Exception e) {
-			System.err.println("smart model factory disable! class not found :"
+			System.err.println("SmartModelFactory disable! class not found :"
 					+ packageName + "." + type);
 			return null;
 		}
@@ -45,8 +43,8 @@ public class SmartModelFactory extends GMPModelFactory {
 			element = (GMPModelElement) Class.forName(packageName + "." + type)
 					.newInstance();
 			element.setName(type);
-			System.out.println("smart factory create : " + packageName + "."
-					+ type);
+			System.out.println("SmartModelFactory create : " + packageName
+					+ "." + type);
 
 		} catch (Exception e) {
 			System.err.println("error in creat Model :" + type);

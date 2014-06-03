@@ -29,12 +29,13 @@ public class Tools {
 					continue;
 				String e_names[] = line.split(" ");
 				for (int i = 1; i < e_names.length; i++) {
-					if (!crt.containsKey("e_names[i]")) {
+					if (!crt.containsKey(e_names[i])) {
 						crt.put(e_names[i], new HashSet<String>());
 					}
 					crt.get(e_names[i]).add(e_names[0]);
 				}
 			}
+			fr.close();
 
 		} catch (Exception e) {
 			e.printStackTrace();
